@@ -1,8 +1,10 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route,Routes } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import Project from './pages/Project';
+import Nav from './components/navbar';
+import Etc from './pages/Etc';
 
 // function App() {
 //   return (
@@ -15,8 +17,13 @@ import Project from './pages/Project';
 const App = () =>{
   return(
     <div>
-      <Route path='/' Component={Home}/>
-      <Route path="/project:pronum" Component = {Project} />
+      <Routes>
+        <Route path='/' Component={Home}/>
+        <Route path="/proj/:projnum" Component = {Project} />
+        <Route path="/etc" Component = {Etc} />
+        {/* 파라미터 프로젝트 넘버 붙이기 */}
+      </Routes>
+      <Nav/>
     </div>
   );
 };
