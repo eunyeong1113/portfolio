@@ -5,107 +5,116 @@ import { Link } from "react-router-dom";
 import {css} from '@emotion/react';
  
 const Nav = () => {
-    const [isHovering,setIsHovering] = useState(false);
-     const handleMouseOver = () => {
-        setIsHovering(true);
-    };    
+    // const [isHovering,setIsHovering] = useState(false);
+    //  const handleMouseOver = () => {
+    //     setIsHovering(true);
+    // };    
 
-    const handleMouseOut = () => {
-        setIsHovering(false);
-    };
-    var name_view = ["HOME", "PROJECT1","PROJECT2","PROJECT3","PROJECT4","Etc."];
-    var name_hover = ["HOME", "공부하는 습관","MINT","밥추","PROJECT4","Etc."];
+    // const handleMouseOut = () => {
+    //     setIsHovering(false);
+    // };
+    // var name_view = ["HOME", "PROJECT1","PROJECT2","PROJECT3","PROJECT4","Etc."];
+    // var name_hover = ["HOME", "공부하는 습관","MINT","밥추","PROJECT4","Etc."];
   return(
-    <div css={back}>
-        <img src="/Logo.png" alt="로고 이미지" css={img}/>
-        <div css={nav}>
-            <span
-                css={isHovering? hover : ""} 
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}>
-                <a css={link}> HOME </a>
-            </span>
-            <span
-                css={isHovering? view : hover} 
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}>
-                <Link to='/' css={link}> HOME </Link>
-            </span>
-            <span
-                css={isHovering? hover : ""} 
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}>
-                <a css={link}> PROJECT1 </a>
-            </span>
-            <span
-                css={isHovering? view : hover} 
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}>
-                <Link to='/proj/1' css={link}> 공부하는 습관 </Link>
-            </span>
-              <span
-                css={isHovering? hover : ""} 
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}>
-                <a css={link}> PROJECT2 </a>
-            </span>
-            <span
-                css={isHovering? view : hover} 
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}>
-                <Link to='/proj/2' css={link}> MINT </Link>
-            </span>
-              <span
-                css={isHovering? hover : ""} 
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}>
-                <a css={link}> PROJECT3 </a>
-            </span>
-            <span
-                css={isHovering? view : hover} 
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}>
-                <Link to='/proj/3' css={link}> 밥추 </Link>
-            </span>
-              <span
-                css={isHovering? hover : ""} 
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}>
-                <a css={link}> PROJECT4 </a>
-            </span>
-            <span
-                css={isHovering? view : hover} 
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}>
-                <Link to='/proj/4' css={link}> PROJECT4 </Link>
-            </span>
-            <span
-                css={isHovering? hover : ""} 
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}>
-                <a css={link}> Etc. </a>
-            </span>
-            <span
-                css={isHovering? view : hover} 
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}>
-                <Link to='/etc' css={link}> Etc. </Link>
-            </span>
-        </div>
-    </div>
+    <><div css={back}>
+          <img src="/Logo.png" alt="로고 이미지" css={img} />
+          <div css={nav}>
+              {/* {
+        name_view.map((name)=>{
+            return(
+                <span
+                    css={isHovering? hover : ""}
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}>
+                    <a css={link}> {name} </a>
+                </span>
+            )
+        })
+    }
+     {
+        name_hover.map((name)=>{
+            return(
+                <span
+                    css={isHovering? view : hover}
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}>
+                    <a css={link}> {name} </a>
+                </span>
+            )
+        })
+    } */}
+              <span css={view}>
+                  <Link to='/' css={link}> HOME </Link>
+              </span>
+              
+              <span className="hide">
+                   <Link to='/proj/1' css={link}> PROJECT1 </Link>
+              </span>
+              <span className="show">
+                  <Link to='/proj/1' css={link}> 공부하는 습관 </Link>
+              </span>
+              <span className="hide">
+                <Link to='/proj/2' css={link}> PROJECT2 </Link>
+              </span>
+              <span className="show">
+                  <Link to='/proj/2' css={link}> MINT </Link>
+              </span>
+               <span className="hide">
+                  <Link to='/proj/3' css={link}> PROJECT3 </Link>
+              </span>
+              <span className="show">
+                  <Link to='/proj/3' css={link}> 밥추 </Link>
+              </span>
+              <span css={view}>
+                  <Link to='/proj/4' css={link}> PROJECT4 </Link>
+              </span>
+              <span css={view}>
+                  <Link to='/etc' css={link}> Etc. </Link>
+              </span>
+
+              
+          </div>
+      </div>
+      <style>{`
+        span.hide:hover{
+           display: none;
+        }
+        span.hide:hover + .show{
+            display: flex;
+            text-decoration : underline;
+        }
+        span.show{
+            display: none;
+        }
+        `}  
+      </style>
+      </>
   );
+  
 };
 
 const view = css`
-    text-decoration : underline;
+    &:hover {
+        text-decoration : underline;
+    }
 `;
 const hover = css`
-    display: none;
+    &:hover {
+        display: none;
+    }
 `;
 const link = css`
     text-decoration: none;  
     color: inherit;
     font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 150px;
+    height: 60px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 `;
 
 const back = css`
