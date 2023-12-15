@@ -6,6 +6,7 @@ import Project from './pages/Project';
 import Nav from './components/navbar';
 import Etc from './pages/Etc';
 import {css} from '@emotion/react'
+import Footer from './components/footer';
 // function App() {
 //   return (
 //     <div className="App">
@@ -24,6 +25,7 @@ const App = () =>{
         <Route path="/etc" Component = {Etc} />
         {/* 파라미터 프로젝트 넘버 붙이기 */}
       </Routes>
+      <Footer/>
     </div>
   );
 };
