@@ -22,12 +22,12 @@ export default Footer;
 const footer = css`
     background-color: #fcfcfc;
     width: 100%;
-    position:fixed;
-    bottom:0px;
+    // position : relative;
+    // transform : translateY(0%);
+    // bottom:0px;
     
 `;
 const footer__contents = css`
-    
     background-color: #ffffff;
     height: 100px;
     display: flex;
