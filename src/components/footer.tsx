@@ -22,9 +22,9 @@ export default Footer;
 const footer = css`
     background-color: #fcfcfc;
     width: 100%;
-    // position : relative;
-    // transform : translateY(0%);
-    // bottom:0px;
+    
+    position:absolute;
+    bottom:0px;
     
 `;
 const footer__contents = css`

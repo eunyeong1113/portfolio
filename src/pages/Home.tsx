@@ -3,17 +3,19 @@
 import React from "react";
 import AboutME from "../components/Home/aboutMe";
 import { css } from "@emotion/react";
+import Footer from "../components/footer";
 
  
 const Home = () => {
   return(
-    <div css={wrap}>
+    <div>
       <AboutME/>
+
     </div>
   );
 };
 export default Home;
-const wrap = css`
-  min-height: 100%;
-  height: auto;
-`;
+// const wrap = css`
+//   min-height: 100%;
+//   height: auto;
+// `;
