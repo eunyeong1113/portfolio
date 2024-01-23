@@ -88,9 +88,9 @@ const StyledHeader = styled.header`
   color: #ffffff;
   background-color: #9DC3E7;
   box-shadow: 0px 5px 10px rgba(136, 136, 136, 0.25);
-  width: 100%;
+  // width: 100%;
   // height:60px;
-  padding: 10px 12px 8px 12px;
+  // padding: 10px 12px 8px 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -170,7 +170,7 @@ const nav = css`
     font-family: "Pretendard";
     margin-left: 50px;
     margin-right: 100px;
-    width: 70%;
+    // width: 70%;
 `;
 const img = css`
     height: 25px;

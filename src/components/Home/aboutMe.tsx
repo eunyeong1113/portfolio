@@ -17,31 +17,33 @@ const AboutME = () => {
                     만족할 수 있는 제품을 개발하고자 합니다.
                 </div>
             </div>
-            <div>
-                <table>
-                    <tr>
-                        <td>이름</td>
-                        <td>이은영</td>
-                    </tr>
-                    <tr>
-                        <td>E-MAIL</td>
-                        <td>eylee1113@naver.com</td>
-                    </tr>
-                    <tr>
-                        <td>MBTI</td>
-                        <td>ESFP</td>
-                    </tr>
-                </table>
+            <div css={table}>
+                <ul css={ul}>
+                    <li css={th}>이름</li>
+                    <li css={td}>이은영</li>
+                </ul>
+                <ul css={ul}>
+                    <li css={th}>E-MAIL</li>
+                    <li css={td}>eylee1113@naver.com</li>
+                </ul>
+                <ul css={ul}>
+                    <li css={th}>MBTI</li>
+                    <li css={td}>ESFP</li>
+                </ul>
             </div>
         </div>
     );
 } 
 export default AboutME;
 const back = css`
-padding: 13vh 12vw 5vh;
-@media screen and (max-width: 768px) {
-        // width:100vh;
-        padding: 5vh 5vw;
+    height:70vh;
+    padding: 13vh 5vh;
+    @media screen and (max-width: 768px) {
+        margin-top:5vh;
+        margin-bottom:5vh;
+        padding:0vh 0vh;
+        height:120vh;
+        
     }
 `;
 const img=css`
@@ -54,25 +56,82 @@ const img=css`
     }
 `;
 const size=css`
-    width:50vh;
     @media screen and (max-width: 768px) {
-        width:45vh;
+        width:35vh;
     }
 `;
 const text=css`
+    padding-top: 5vh;
     // float:left;
-    width:65vw;
+    width:32vw;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 700;
     font-size: 5vh;
     color: #4A4A4A;
+    @media screen and (max-width: 768px) {
+        // margin-top:5vh;
+        width:auto;
+        text-align:center;
+    }
 `;
 const main=css`
-`;
-const sub=css`
-    margin-top:1rem;
-    font-size: 3vh;
-    line-height: 2rem;
     word-break:keep-all
 `;
+const sub=css`
+    color:#606060;
+    margin-top:3vh;
+    font-size: 3vh;
+    line-height: 5vh;
+    word-break:keep-all
+`;
+const table=css`
+position: absolute;
+bottom: 0px;
+padding-bottom:15vh;
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 700;
+font-size: 3vh;
+color: #4A4A4A;
+@media screen and (max-width: 768px) {
+        margin-top:3vh;
+        position: static;
+        bottom: auto;
+        padding-bottom:0vh;
+        text-align:center;
+        display: grid
+    }
+`;
+
+const th=css`
+    padding-bottom:1vh;
+    width:8vw;
+    display:inline-block;
+    @media screen and (max-width: 768px) {
+        display:contents;
+        text-align:center;
+        padding-bottom:0vh;
+    }
+`;
+const td=css`
+    padding-bottom:1vh;
+    display:inline;
+    @media screen and (max-width: 768px) {
+        text-align:center;
+        display:block;
+        color:#606060;
+        margin-top:1vh;
+        font-size:2.8vh;
+        padding-bottom:0vh;
+    }
+`;
+const ul=css`
+    list-style-type: none;
+    padding-left:0px;
+    
+`;
+
+
+

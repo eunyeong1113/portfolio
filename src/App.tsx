@@ -36,8 +36,7 @@ const App = () =>{
 };
 export default App;
 const wrapper=css`
-  height:auto;
-	min-height: calc(100vh - 100px);
-  // position: relative;
+  height: 100vh;
+  width:100vw;
 `;
 
